@@ -17,10 +17,11 @@ import {
 export class App {
   protected readonly title = signal('learning-center');
 
-  private translate = inject(TranslateService);
+  private translate: TranslateService;
 
   constructor() {
-    this.translate.addLangs(['de', 'en']);
+    this.translate = inject(TranslateService);
+    this.translate.addLangs(['es', 'en']);
     this.translate.setFallbackLang('en');
     this.translate.use('en');
   }
